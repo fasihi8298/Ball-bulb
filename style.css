@@ -29,4 +29,57 @@
     overflow: hidden;
     position: relative;
   }
+
+  
+canvas {
+    cursor: -webkit-grab;
+    cursor: grab;
+  }
+  
+  .toggle {
+    width: 100%;
+    position: absolute;
+    bottom: 36px;
+    left: 0;
+    z-index: 90;
+  }
+  .toggle--anim {
+    bottom: 70px;
+  }
+  .toggle__btn {
+    background-color: hotpink;
+    border: 1px solid #fffffd;
+    cursor: pointer;
+    outline: none;
+    padding: 5px 11px 5px 13px;
+    transition: background-color 0.2s ease-in-out;
+  }
+  .toggle__btn--anim {
+    border-color: hotpink;
+    font-size: 0.8rem;
+    padding: 2px 6px 2px 12px;
+  }
+  .toggle__btn--anim[data-action=pause] {
+    padding-right: 9px;
+  }
+  .toggle__btn:not(.toggle__btn--anim):last-child {
+    border-left: 0;
+  }
+  .toggle__btn[data-active], .toggle__btn[data-action] {
+    background-color: #fffffd;
+    color: hotpink;
+    font-weight: bold;
+  }
+  
+  .credit {
+    width: 100%;
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+  }
+  .credit__link {
+    color: rgba(255, 255, 253, 0.6);
+    padding: 6px 15px 8px;
+    text-decoration: none;
+  }
   
