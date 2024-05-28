@@ -1,0 +1,32 @@
+* {
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+  }
+  
+  .p-text {
+    color: #fffffd;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 0.55rem;
+    letter-spacing: 2px;
+    line-height: 1.5;
+    text-align: center;
+    text-transform: lowercase;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+  
+  .p-flex-hzt-center {
+    display: flex;
+    justify-content: center;
+  }
+  
+  body {
+    height: 100vh;
+    background-color: hotpink;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+  }
+  
