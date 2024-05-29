@@ -157,3 +157,16 @@ const toggle = {
 };
 toggle.checkActiveBtnColor();
 toggle.checkActiveBtnAnim();
+
+// SCREEN RESIZE
+const onWindowResize = () => {
+	const w = window.innerWidth;
+	const h = window.innerHeight;
+	
+	camera.aspect = w / h;
+	camera.updateProjectionMatrix();
+
+	renderer.setSize(w, h);	
+	renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+};
+window.addEventListener("resize", onWindowResize);
