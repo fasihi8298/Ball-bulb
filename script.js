@@ -170,3 +170,38 @@ const onWindowResize = () => {
 	renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 };
 window.addEventListener("resize", onWindowResize);
+
+// CONTROLS INTERACTION
+const createControls = () => {
+	// Make sure to run controls outside render function 	
+	// If edit controls update controls while rendering
+	controls.autoRotateSpeed = 3.0;
+	controls.enableDamping = true;
+	controls.dampingFactor = 0.15;
+	controls.enableZoom = true;
+	controls.minDistance = 1;
+	controls.maxDistance = 8;
+	controls.keyPanSpeed = 30;
+};
+createControls();
+
+// CREATE ANIMATIONS
+const createAnimLights = () => {
+	const orbitAngle = clock.getElapsedTime()/2;
+	
+	if (IS_ANIMATED) {	
+		// Lights rotating in the x axis
+		lightA.position.x = Math.cos(orbitAngle) * lightDepth*-1;
+		lightA.position.z = Math.sin(orbitAngle) * lightDepth;
+		
+		lightB.position.x = Math.cos(orbitAngle) * lightDepth;
+		lightB.position.z = Math.sin(orbitAngle) * lightDepth*-1;
+		
+		// Lights rotating in the y axis
+		lightZ.position.y = Math.cos(orbitAngle) * lightDepth*-1;
+		lightZ.position.z = Math.sin(orbitAngle) * lightDepth;
+		
+		lightY.position.y = Math.cos(orbitAngle) * lightDepth;
+		lightY.position.z = Math.sin(orbitAngle) * lightDepth*-1;
+	} 
+};
