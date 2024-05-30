@@ -205,3 +205,16 @@ const createAnimLights = () => {
 		lightY.position.z = Math.sin(orbitAngle) * lightDepth*-1;
 	} 
 };
+
+// RENDER 3D LAMP
+const render = () => {	
+	createAnimLights();
+	
+	controls.autoRotate = IS_ANIMATED ? true : false;
+	controls.update();
+	
+	renderer.render(scene, camera);
+
+	requestAnimationFrame(render);
+};
+render();
